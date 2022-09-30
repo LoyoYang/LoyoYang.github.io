@@ -1,0 +1,6 @@
+@article{yang2021burn,
+  title={Burn After Reading: Online Adaptation for Cross-domain Streaming Data},
+  author={Yang, Luyu and Gao, Mingfei and Chen, Zeyuan and Xu, Ran and Shrivastava, Abhinav and Ramaiah, Chetan},
+  journal={arXiv preprint arXiv:2112.04345},
+  year={2021}
+}

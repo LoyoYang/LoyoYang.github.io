@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta property="og:image" content="BurnAfterReading_title.png"/>
+<meta property="og:title" content="Burn After Reading: Online Adaptation for Cross-domain Streaming Data"/>
+
+<!--<script src="lib.js" type="text/javascript"></script>-->
+<!--<script src="popup.js" type="text/javascript"></script>-->
+
+<!--<script type="text/javascript">-->
+<!--// redefining default features-->
+<!--var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';-->
+<!--</script>-->
+
+<link media="all" href="glab.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+IMG {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FLOAT: right;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 0px
+}
+#primarycontent {
+    MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1000? "1000px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1000px }
+BODY {
+    TEXT-ALIGN: center
+}
+</style>
+
+<meta content="MSHTML 6.00.2800.1400" name="GENERATOR"><script src="b5m.js" id="b5mmain" type="text/javascript"></script></head>
+
+<body>
+
+<div id="primarycontent">
+<center><h1>
+    Burn After Reading: <br>
+Online Adaptation for Cross-domain Streaming Data <br>
+(ECCV 2022)
+</h1></center>
+
+
+<center><h3>
+    <a href="https://www.loyo.me/">Luyu Yang</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://fly6464.github.io/">Mingfei Gao</a>&nbsp;&nbsp;&nbsp;
+  <a href="http://zeyuanchen.com/">Zeyuan Chen</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://xurantju.github.io/">Ran Xu</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://www.cs.umd.edu/~abhinav/">Abhinav Shrivastava</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://scholar.google.com/citations?user=gIqrE4cAAAAJ&hl=en">Chetan Ramaiah</a></h3></center>
+
+<center><h3 style="color:#5E77FC"><a>Salesforce Research</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a>University of Maryland</a>  </h3></center>
+<center><h3><a href="https://arxiv.org/pdf/2112.04345.pdf">Pdf</a> | <a href="https://github.com/salesforce/burn-after-reading">Code</a> </h3></center>
+
+<br>
+<br>
+<center><img src="title_img.png" width="1000"> </center>
+<br>
+
+
+
+<h2>Abstract</h2>
+
+<div style="font-size:14px"><p align="justify">In the context of online privacy, many methods propose complex security preserving measures to protect sensitive data. In this paper we note that: not storing any sensitive data is the best form of security. We propose an new task called <b>"Burn After Reading"</b>, i.e. each online sample is permanently deleted after it is processed. Our framework utilizes the labels from the public data and predicts on the unlabeled sensitive private data. To tackle the inevitable distribution shift from the public data to the private data, we propose a novel unsupervised domain adaptation algorithm that aims at the fundamental challenge of this online setting--the lack of diverse source-target data pairs. We design a Cross-Domain Bootstrapping approach, named <b>CroDoBo</b>, to increase the combined data diversity across domains. To fully exploit the valuable discrepancies among the diverse combinations, we employ the training strategy of multiple learners with co-supervision. CroDoBo achieves state-of-the-art online performance on four domain adaptation benchmarks.
+</p></div>
+
+
+<br>
+
+<h2>Task Definition</h2>
+<p>We propose a <b>new task for online data privacy</b>, called "Burn After Reading", it takes two inputs: a public dataset with ground-truth (source), and a private dataset without any label information (target). There is a distribution shift between the two datasets. Meanwhile, we assume no time constraint on the public dataset (i.e., public dataset is accessible at anytime), but each private sample/batch is deleted before the next one arrives (order of arrival is random).
+Our goal is to success on the private target data.</p>
+<p>
+The following shows the data-flow "Burn-After-Reading" at one iteration.
+The iteration contains a training and a test phase.
+In training phase, the model takes a {data, label} pair from the public dataset, and an unlabeled {data} from the private dataset.
+The model updates based on an adaptation loss and then moves to test phase on the private {data}. After tested, the current target data is permanently deleted and shall not be reused. </p>
+<p>
+<b>Generally speaking, each private data/batch is (1.) trained (2.) tested (3.) deleted.</b>
+</p>
+<center><img src="task_img.png" width="1000"> </center>
+
+
+<br>
+
+<h2>Paper</h2>
+<p><a href="https://arxiv.org/abs/2112.04345">arxiv</a> </p>
+
+<br>
+
+<h2>Citation</h2>
+<p>Luyu Yang, Mingfei Gao, Zeyuan Chen, Ran Xu, Abhinav Shrivastava, Chetan Ramaiah.
+    "Burn After Reading: Online Adaptation for Cross-domain Streaming Data", ECCV 2022.</p>
+<p>
+<a href="BurnAfterReading.txt">bibtex</a>
+</p>
+
+<br>
+
+
+<h2>Code</h2>
+<p><a href="https://github.com/salesforce/burn-after-reading">pytorch</a></p>
+<br>
+
+
+<!--<br>-->
+<!--<h2>Acknowledgement</h2>-->
+<!--<p align="justify">We thank Aaron Hertzmann, Shiry Ginosar, Deepak Pathak, Bryan Russell, Eli Shechtman, Richard Zhang, and Tinghui Zhou for many helpful comments. This work was supported in part by NSF SMA-1514512, NSF IIS-1633310, a Google Research Award, Intel Corp, and hardware donations from NVIDIA. JYZ is supported by the Facebook Graduate Fellowship, and TP is supported by the Samsung Scholarship. The photographs used in style transfer were taken by AE, mostly in France.</p>-->
+
+<div style="display:none">
+<script type="text/javascript" src="http://gostats.com/js/counter.js"></script>
+<script type="text/javascript">_gos='c3.gostats.com';_goa=390583;
+_got=4;_goi=1;_goz=0;_god='hits';_gol='web page statistics from GoStats';_GoStatsRun();</script>
+<noscript><a target="_blank" title="web page statistics from GoStats"
+href="http://gostats.com"><img alt="web page statistics from GoStats"
+src="http://c3.gostats.com/bin/count/a_390583/t_4/i_1/z_0/show_hits/counter.png"
+style="border-width:0" /></a></noscript>
+</div>
+</body></html
+>
+
